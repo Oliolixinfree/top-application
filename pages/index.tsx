@@ -1,3 +1,12 @@
+import React from 'react';
+import { Htag } from '../components';
+
 export default function Home(): JSX.Element {
-  return <div></div>;
+  return (
+    <>
+      <Htag tag="h1">Текст</Htag>
+      <Htag tag="h2">Текст</Htag>
+      <Htag tag="h3">Текст</Htag>
+    </>
+  );
 }
