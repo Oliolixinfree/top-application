@@ -23,9 +23,6 @@
   padding-left: 32px;
   border-left: 1px solid #dfdfdf;
 }
-.secondLevelBlockOpend:last-child {
-  margin-bottom: 25px;
-}
 .secondLevel {
   margin-bottom: 10px;
   cursor: pointer;
@@ -34,6 +31,15 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 16px;
+}
+.secondLevelBlock {
+  display: none;
+}
+.secondLevelBlockOpened {
+  display: block;
+}
+.secondLevelBlockOpened:last-child {
+  margin-bottom: 25px;
 }
 
 .thirdLevel {
