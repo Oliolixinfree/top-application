@@ -8,6 +8,7 @@ import ServicesIcon from './icons/services.svg';
 import BooksIcon from './icons/books.svg';
 import ProductsIcon from './icons/products.svg';
 import { TopLevelCategory } from '../../interfaces/page.interface';
+import Link from 'next/link';
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   { route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
@@ -24,15 +25,17 @@ export const Menu = (): JSX.Element => {
       <>
         {firstLevelMenu.map((m) => (
           <div key={m.route}>
-            <a href={`/${m.route}`}>
-              <div
-                className={cn(styles.firstLevel, {
-                  [styles.firstLevelActive]: m.id === firstCategory,
-                })}>
-                {m.icon}
-                <span>{m.name}</span>
-              </div>
-            </a>
+            <Link href={`/${m.route}`}>
+              <a>
+                <div
+                  className={cn(styles.firstLevel, {
+                    [styles.firstLevelActive]: m.id === firstCategory,
+                  })}>
+                  {m.icon}
+                  <span>{m.name}</span>
+                </div>
+              </a>
+            </Link>
             {m.id === firstCategory && buildSecondLevel(m)}
           </div>
         ))}
@@ -58,24 +61,16 @@ export const Menu = (): JSX.Element => {
   };
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((p) => (
-      <a
-        href={`/${route}/${p.alias}`}
-        className={cn(styles.thirdLevel, {
-          [styles.thirdLevelActive]: false,
-        })}>
-        {p.category}
-      </a>
+      <Link href={`/${route}/${p.alias}`}>
+        <a
+          className={cn(styles.thirdLevel, {
+            [styles.thirdLevelActive]: false,
+          })}>
+          {p.category}
+        </a>
+      </Link>
     ));
   };
 
-  return (
-    <div className={styles.menu}>
-      {/* <ul>
-        {menu.map((m) => (
-          <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-        ))}
-      </ul> */}
-      {buildFirstLevel()}
-    </div>
-  );
+  return <div className={styles.menu}>{buildFirstLevel()}</div>;
 };
