@@ -6,7 +6,7 @@
     '. header header .'
     '. sidebar body .'
     'footer footer footer footer';
-  gap: 0 30px;
+  gap: 40px 30px;
   min-height: 100vh;
 }
 
@@ -36,6 +36,9 @@
     display: block;
   }
   .sidebar {
-    display: none; /*!important */
+    display: none !important;
+  }
+  .body {
+    padding: 0 15px;
   }
 }
