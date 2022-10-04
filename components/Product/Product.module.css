@@ -262,4 +262,7 @@
       'hr2'
       'actions';
   }
+  .reviewButton {
+    margin-left: 10px;
+  }
 }
