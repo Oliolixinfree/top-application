@@ -26,14 +26,14 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
       <div className={cn(styles.reviewForm, className)} {...props}>
         <Input
           {...register('name', {
-            required: { value: true, message: 'Заполните имя!' },
+            required: { value: true, message: 'Обязательное поле!' },
           })}
           placeholder="Имя"
           error={errors.name}
         />
         <Input
           {...register('title', {
-            required: { value: true, message: 'Заполните заголовок!' },
+            required: { value: true, message: 'Обязательное поле!' },
           })}
           placeholder="Заголовок отзыва"
           className={styles.title}
@@ -44,14 +44,21 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
           <Controller
             name="rating"
             control={control}
+            rules={{ required: { value: true, message: 'Обязательное поле!' } }}
             render={({ field }) => (
-              <Rating isEditable rating={field.value} setRating={field.onChange} ref={field.ref} />
+              <Rating
+                isEditable
+                rating={field.value}
+                setRating={field.onChange}
+                ref={field.ref}
+                error={errors.rating}
+              />
             )}
           />
         </div>
         <Textarea
           {...register('description', {
-            required: { value: true, message: 'Заполните отзыв!' },
+            required: { value: true, message: 'Обязательное поле!' },
           })}
           placeholder="Текст отзыва"
           className={styles.description}
