@@ -7,7 +7,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 14px; /*fix*???????*/
   line-height: 22px;
 }
 
@@ -42,4 +42,11 @@
   bottom: -20px;
   left: 0;
   color: var(--red);
+}
+
+.fs16 {
+  font-size: 16px;
+}
+.fs14 {
+  font-size: 14px;
 }

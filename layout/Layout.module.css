@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+  grid-template-columns: auto 230px minmax(320px, 1200px) auto; /*fix??????????????*/
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     '. header header .'
@@ -40,6 +40,5 @@
   }
   .body {
     padding: 0 15px;
-    margin: 0 auto;
   }
 }
