@@ -5,7 +5,7 @@ import { ForwardedRef, forwardRef } from 'react';
 
 export const Input = forwardRef(
   (
-    { className, error, ...props }: InputProps,
+    { fontsize = 'fs16', className, error, ...props }: InputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ): JSX.Element => {
     return (
@@ -13,6 +13,8 @@ export const Input = forwardRef(
         <input
           className={cn(styles.input, {
             [styles.error]: error,
+            [styles.fs16]: fontsize === 'fs16',
+            [styles.fs14]: fontsize === 'fs14',
           })}
           ref={ref}
           {...props}
