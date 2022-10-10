@@ -29,7 +29,7 @@ export const Menu = (): JSX.Element => {
   const variantsChildren = {
     visible: {
       opacity: 1,
-      height: 30 /*fix*/,
+      height: 'auto' /*fix*/,
     },
     hidden: {
       opacity: 0,
