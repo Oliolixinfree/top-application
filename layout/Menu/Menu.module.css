@@ -29,8 +29,7 @@
   text-transform: uppercase;
   color: var(--dark-gray);
   font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 12px;
 }
 .secondLevelBlock {
   overflow: hidden;
@@ -42,7 +41,7 @@
   cursor: pointer;
   color: var(--dark-gray);
   font-size: 16px;
-  line-height: 19px;
+  outline-offset: -1px;
 }
 .thirdLevelActive,
 .thirdLevel:hover {
