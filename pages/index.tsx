@@ -5,6 +5,7 @@ import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../helpers/api';
 
+// eslint-disable-next-line
 function Home({ menu }: HomeProps): JSX.Element {
   return (
     <>

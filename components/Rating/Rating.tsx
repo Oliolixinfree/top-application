@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useRef } from 'react';
+import React, { ForwardedRef, forwardRef, useEffect, useRef, useState } from 'react';
 import { RatingProps } from './Rating.props';
 import StarIcon from './star.svg';
 import cn from 'classnames';
@@ -9,12 +9,13 @@ export const Rating = forwardRef(
     { isEditable = false, rating, setRating, error, tabIndex, ...props }: RatingProps,
     ref: ForwardedRef<HTMLDivElement>,
   ): JSX.Element => {
-    const [ratingArray, setRatingArray] = React.useState<JSX.Element[]>(new Array(5).fill(<></>));
+    const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
     const ratingArrayRef = useRef<(HTMLSpanElement | null)[]>([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
       constructRating(rating);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rating, tabIndex]);
 
     const computeFocus = (r: number, i: number): number => {
@@ -115,3 +116,5 @@ export const Rating = forwardRef(
     );
   },
 );
+
+Rating.displayName = 'Rating';
